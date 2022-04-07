@@ -1,0 +1,10 @@
+--cpu Cortex-M3
+".\obj\principal.o"
+".\obj\startup-rvds.o"
+".\Driver\DriverJeuLaser.lib"
+".\obj\bruitverre.o"
+".\obj\gestionson.o"
+--library_type=microlib --strict --scatter ".\Obj\StepSon.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "StepSon.map" -o .\Obj\StepSon.axf

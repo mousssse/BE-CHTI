@@ -1,0 +1,9 @@
+--cpu Cortex-M3
+".\obj\principal.o"
+".\obj\cligno.o"
+".\obj\startup-rvds.o"
+".\Driver\DriverJeuLaser.lib"
+--library_type=microlib --strict --scatter ".\Obj\BacASable.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "BacASable.map" -o .\Obj\BacASable.axf
