@@ -16,17 +16,23 @@ int scores[6];
 int touche = 0;
 int frequences[6] = {17, 18, 19, 20, 23, 24};
 int led[4] = {LED_Cible_4, LED_Cible_3, LED_Cible_2,  LED_Cible_1};
+int ledIndex;
 int active;
 int nbJoueurs = 6;
 
-void init() {
-	active = led[rand() % 4];
+// choisit une cible au hasard
+void chooseTarget() {
+	// pour que la nouvelle cible soit différente de la précédente
+	int random = rand() % 3;
+	ledIndex = (random + ledIndex) % 4;
+	active = led[random];
 	Choix_Capteur(active);
 	Prepare_Set_LED(active);
 	// à commenter qd on n'a pas la malette :
 	//Mise_A_Jour_Afficheurs_LED(); 
 }
 
+// remet le flag à 0 pour que callbackson puisse jouer le son
 void startSon() {
 	flag = 0;
 }
@@ -52,10 +58,10 @@ void systick_callback(void) {
 			// on n'a jamais pu tester startSon mais on y croit dur comme fer !!!
 			startSon();
 			
-			//affichage et changement de cible5
+			//affichage et changement de cible
 			Prepare_Clear_LED(active);
 			Prepare_Afficheur(numJoueur+1, scores[numJoueur]);
-			init();
+			chooseTarget();
 		}
 	}
 	touche = 0;
@@ -71,7 +77,7 @@ int main(void)
 // mise en place du callback
 CLOCK_Configure();
 Systick_Period_ff(360000); // 0.005 * 72 000 000 (fréquence du CPU 72MHz)
-Systick_Prio_IT(2, systick_callback); 
+Systick_Prio_IT(2, callbackson); 
 SysTick_On;
 SysTick_Enable_IT;
 	
@@ -96,7 +102,9 @@ for (int i = 0; i < nbJoueurs; i++) {
 for (int i = 0; i < 4; i++) {
 	Prepare_Afficheur(i, 0);
 }
-init();
+// première valeur d'index entre 0 et 3
+ledIndex = rand() % 4;
+chooseTarget();
 
 //============================================================================	
 	
