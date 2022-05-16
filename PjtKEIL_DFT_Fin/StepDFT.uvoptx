@@ -407,6 +407,11 @@
           <WinNumber>1</WinNumber>
           <ItemText>\\StepDFT\Src/principal.c\dma_buf[0]</ItemText>
         </Ww>
+        <Ww>
+          <count>6</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>\\StepDFT\Src/principal.c\dma_buf[17]</ItemText>
+        </Ww>
       </WatchWindow1>
       <MemoryWindow1>
         <Mm>
