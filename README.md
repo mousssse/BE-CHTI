@@ -11,9 +11,8 @@ Une des cibles, de manière aléatoire, s'active et la LED associée s'allume po
 et le jeu continue ainsi.
 
 # Remarques sur nos tests
-Nous n'avons pas eu accès à la malette lors des séances de BE pour tester nos affichages, utilisations des LEDs ou seuil de détection du signal. 
-Pour nos tests, nous avons remarqué que nous obtenions souvent 12 ou 14 points avec un seul tir. Cela est dû aux salves du laser, détectées plusieurs fois et donc traîtées
-comme plusieurs tirs. Ce problème est normalement réglé lorsqu'on utilise la malette, puisque nous n'affectons qu'une seule fois les points avant de changer de cible.
+Nous eu accès à la malette lors du petit oral du BE pour tester nos affichages, utilisations des LEDs et seuil de détection du signal, seul le son n'a pas été testé. 
+Pour nos tests avec la photodiode, nous avons remarqué que nous obtenions souvent 12 ou 14 points avec un seul tir. Cela est dû aux salves du laser, détectées plusieurs fois et donc traîtées comme plusieurs tirs. Ce problème est réglé lorsqu'on utilise la malette, puisque nous n'affectons qu'une seule fois les points avant de changer de cible.
 
 # Petit mot de la fin
 Merci M. Le Botlan d'être un si bon encadrant de TP. On aurait aimé vous avoir dans tous nos autres projets ! On espère que vous passerez de bonnes vacances et qu'on 
